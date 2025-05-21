@@ -121,9 +121,9 @@ export const updateProductModel = async (id, updatedProduct) => {
 
   // Mantenemos el id original y evitamos que lo sobrescriban
   const oldProduct = products[index];
-  products[index] = {
+  products[index] = { 
+     id: oldProduct.id,
     ...updatedProduct,
-    id: oldProduct.id,
     createdAt: oldProduct.createdAt,
     updatedAt: now
   };
@@ -141,7 +141,7 @@ export const updatePartialProductModel = async (id, productData) => {
   const { id: ignoredId, ...dataWithoutId } = productData;
 
   products[index] = {
-    ...oldProduct,
+     ...oldProduct,
     ...dataWithoutId,
     updatedAt: new Date()
   };
