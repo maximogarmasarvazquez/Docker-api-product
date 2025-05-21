@@ -51,17 +51,20 @@ Usa herramientas como Postman o thunder para consumir las rutas HTTP.
 
 Usa herramientas como Postman o Thunder Client para probar las rutas HTTP.
 
-Método	Ruta	                Descripción
-GET	     /api/v1/products	     Obtener todos los productos
-GET	     /api/v1/products/:id  Obtener un producto por ID
-POST	   /api/v1/products	     Crear un nuevo producto
-PUT	     /api/v1/products/:id	 Actualizar un producto completo
-PATCH	   /api/v1/products/:id	 Actualizar un producto parcialmente
-DELETE	 /api/v1/products/:id	 Eliminar un producto
 
-🧪 Ejemplo de producto
-json
+| Método | Ruta                   | Descripción                         |
+| ------ | ---------------------- | ----------------------------------- |
+| GET    | `/api/v1/products`     | Obtener todos los productos         |
+| GET    | `/api/v1/products/:id` | Obtener un producto por ID          |
+| POST   | `/api/v1/products`     | Crear un nuevo producto             |
+| PUT    | `/api/v1/products/:id` | Actualizar un producto completo     |
+| PATCH  | `/api/v1/products/:id` | Actualizar un producto parcialmente |
+|        |                        |                                     |
 
+
+## Ejemplo de Producto
+
+```json
 {
   "id": 1,
   "name": "Producto ejemplo",
