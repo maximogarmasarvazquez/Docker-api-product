@@ -2,8 +2,9 @@ import express from 'express';
 const app = express();
 
 import productRoutes from './routes/product.route.js';
-// const initDB = require('./config/init.js');
-// initDB();
+import initDB from './config/init.js'; // Import the initDB function
+
+initDB();
 
 app.use(express.json());
 app.use('/api/v1', productRoutes);

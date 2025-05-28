@@ -1,8 +1,8 @@
 import {
   getAllProductsModel,
-  getProductByIdModel,
   createProductModel,
   deletedProductModel,
+  getProductByIdModel,
   updateProductModel,
   updatePartialProductModel
 } from '../models/product.model.js';
