@@ -1,8 +1,9 @@
-// require('dotenv').config(); // 🔹 Primero cargamos las variables de entorno
+import dotenv from 'dotenv';
+dotenv.config();  // Se ejecuta antes de usar process.env
 
 import app from './src/app.js';
 
-const PORT = process.env.PORT || 3000; // 🔹 Ahora PORT sí puede leerse correctamente
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en puerto ${PORT}`);
