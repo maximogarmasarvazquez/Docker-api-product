@@ -2,6 +2,7 @@ import db from '../config/bd.js';
 
 export const getAllProductsModel = async () => {
   const [rows] = await db.query('SELECT * FROM product');
+  // rows es un array de objetos, cada objeto representa una fila de la tabla 
   return rows;
 };
 
