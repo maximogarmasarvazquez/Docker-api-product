@@ -20,21 +20,19 @@ export const createProductModel = async (product) => {
 
 export const getProductByIdModel = async (id) => {
   const [rows] = await db.query('SELECT * FROM product WHERE id = ?', [id]);
-
-  if (rows.length === 0) {
-    throw new Error('Producto no encontrado');
-  }
-
-  return rows[0];
+  return rows.length === 0 ? null : rows[0];
 };
 
 export const deletedProductModel = async (id) => {
   const [result] = await db.query('DELETE FROM product WHERE id = ?', [id]);
 
   if (result.affectedRows === 0) {
-    throw new Error('Producto no encontrado');
+    return null; // No se encontró el producto con ese ID
   }
+
+  return { id }; // Es buena idea devolver el id del producto eliminado para confirmar
 };
+
 
 export const updateProductModel = async (id, product) => {
   const { name, description, price, stock } = product;
@@ -46,7 +44,7 @@ export const updateProductModel = async (id, product) => {
   );
 
   if (result.affectedRows === 0) {
-    throw new Error('Producto no encontrado');
+    return null; // No se encontró el producto con ese ID
   }
 
   return { id, name, description, price, stock };
@@ -74,8 +72,9 @@ export const updatePartialProductModel = async (id, product) => {
 
   const [result] = await db.query(query, values);
 
+
   if (result.affectedRows === 0) {
-    throw new Error('Producto no encontrado');
+    return null; // No se encontró el producto con ese ID
   }
 
   return { id, ...product };

@@ -14,7 +14,8 @@ const app = http.createServer((req, res) => { //creamos el servidor HTTP manualm
     req.url = req.url.replace('/api/v1', '') || '/';// Quitamos el prefijo /api/v1 para que el router lo maneje bien
     productRoutes.handle(req, res); // handle (manejar) es la funcion que maneja las rutas del router
   } else {
-    res.writeHead(404, { 'Content-Type': 'application/json' });// escribimos el encabezado de respuesta con un código 404
+    res.writeHead(404,//Not Found: Recurso no encontrado.
+       { 'Content-Type': 'application/json' });// escribimos el encabezado de respuesta con un código 404
     res.end(JSON.stringify({ error: 'Ruta no encontrada' })); // lo pasamos a string manualmente
   }
 
