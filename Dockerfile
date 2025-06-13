@@ -1,20 +1,20 @@
 # Imagen base de Node.js con soporte para ES modules
 FROM node:18
 
-# Crear directorio de trabajo
+# Establecer directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copiar solo package.json y lock para cache de dependencias
+# Copiar solo los archivos de dependencias
 COPY package*.json ./
 
 # Instalar dependencias
-RUN npm install
+RUN npm install --production
 
 # Copiar el resto del código fuente
 COPY . .
 
-# Exponer el puerto (solo para info, no obligatorio)
+# Exponer el puerto que usa tu aplicación (opcional)
 EXPOSE 3000
 
-# Comando por defecto para producción
+# Comando por defecto para correr la app
 CMD ["node", "server.js"]
