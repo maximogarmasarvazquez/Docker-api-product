@@ -1,0 +1,2 @@
+# Ignorar dependencias instaladas localmente (se instalan dentro del contenedor)
+node_modules
