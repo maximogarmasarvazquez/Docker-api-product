@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   db:
     image: mysql:5.7
@@ -11,7 +9,7 @@ services:
       MYSQL_PASSWORD: Tiburcio123
       MYSQL_ROOT_PASSWORD: root
     ports:
-        - "3307:3306"
+      - "3307:3306"
     volumes:
       - db_data:/var/lib/mysql
 
@@ -24,11 +22,12 @@ services:
     depends_on:
       - db
     environment:
-      DB_HOST: db
-      DB_NAME: bd_products
-      DB_USER: maxivaz
-      DB_PASS: Tiburcio123
-      PORT: 3000
+      DB_HOST: db          # El hostname del contenedor MySQL
+      DB_PORT: 3306        # Puerto MySQL interno en Docker (3306)
+      DB_NAME: bd_products # Nombre de la base de datos
+      DB_USER: maxivaz     # Usuario MySQL
+      DB_PASS: Tiburcio123 # Contraseña del usuario
+      PORT: 3000           # Puerto en el que corre la API
 
 volumes:
   db_data:
