@@ -10,8 +10,8 @@ services:
       MYSQL_USER: maxivaz
       MYSQL_PASSWORD: Tiburcio123
       MYSQL_ROOT_PASSWORD: root
-    ports:
-      - "3306:3306"
+      ports:
+        - "3307:3306"
     volumes:
       - db_data:/var/lib/mysql
 
