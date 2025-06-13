@@ -3,8 +3,8 @@ services:
     image: mysql:5.7
     container_name: mysql-db
     environment:
-      MYSQL_DATABASE: DB_NAME
-      MYSQL_ROOT_PASSWORD: root_pass
+      MYSQL_DATABASE:  bd_products    
+      MYSQL_ROOT_PASSWORD: pass
     ports:
       - "3307:3306"
     volumes:
@@ -18,7 +18,7 @@ services:
       - db
     environment:
       DB_HOST: db          # El hostname del contenedor MySQL
-      DB_PORT: 3307        # Puerto MySQL interno en Docker (3306)
+      DB_PORT: 3306        # Puerto MySQL interno en Docker (3306)
       DB_NAME: bd_products # Nombre de la base de datos
       DB_USER: root     # Usuario MySQL
       DB_PASS: pass # Contraseña del usuario
