@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # Comando por defecto para arrancar la app
-CMD ["node", "server.js"]
+CMD ["npm", "run", "dev"]
